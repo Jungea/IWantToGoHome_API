@@ -30,5 +30,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    mnist_model = load_model('./data/mnist_model.h5')
-    app.run()
+    mnist_model = load_model('mnist_model.h5')
+    app.run(host="0.0.0.0")
