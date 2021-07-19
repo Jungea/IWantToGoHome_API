@@ -1,10 +1,12 @@
-import numpy as np
-from keras.models import load_model
-from PIL import Image
-
+# flask 관련 패키지
 from flask import Flask
 from flask import request
 from flask_cors import CORS
+
+# 그외 패키지
+import numpy as np
+from keras.models import load_model
+from PIL import Image
 
 
 app = Flask(__name__)
