@@ -11,17 +11,17 @@ from PIL import Image
 app = Flask(__name__)
 cors = CORS(app)
 
+mnist_model = load_model('mnist_model.h5')
+
 
 @app.route("/")
 def hello():
-    app.logger.info("router / IN")
     return {"hello": "world"}
 
 
 # url/mnist/predict
 @app.route("/mnist/predict", methods=['POST'])
 def predict():
-    app.logger.info("route /mnist/predict IN")
 
     requestData = Image.open(request.files['file']).resize((28, 28)).convert("L")
 
@@ -32,10 +32,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.logger.info("__name__ == __main__ ")
-
-    mnist_model = load_model('mnist_model.h5')
-    app.logger.info("mnist model")
-
     app.debug = True
     app.run(host="0.0.0.0")
