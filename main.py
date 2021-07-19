@@ -26,7 +26,7 @@ def predict():
 
     requestData = Image.open(request.files['file']).resize((28, 28)).convert("L")
 
-    img = np.resize(requestData, (1, 784))
+    img = np.resize(requestData, (1, 28, 28, 1))
     img = ((np.array(img) / 255) - 1) * -1
 
     return {"result": mnist_model.predict(img).tolist()}
