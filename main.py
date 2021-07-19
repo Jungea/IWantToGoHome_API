@@ -7,8 +7,6 @@ from flask_cors import CORS
 import numpy as np
 from keras.models import load_model
 from PIL import Image
-import logging
-
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -39,4 +37,5 @@ if __name__ == '__main__':
     mnist_model = load_model('mnist_model.h5')
     app.logger.info("mnist model")
 
+    app.debug = True
     app.run(host="0.0.0.0")
