@@ -21,6 +21,7 @@ def hello():
 # url/mnist/predict
 @app.route("/mnist/predict", methods=['POST'])
 def predict():
+    print("route /mnist/predict")
     requestData = Image.open(request.files['file']).resize((28, 28)).convert("L")
 
     img = np.resize(requestData, (1, 784))
@@ -30,5 +31,7 @@ def predict():
 
 
 if __name__ == '__main__':
+    print("__name__ == __main__ ")
     mnist_model = load_model('mnist_model.h5')
+    print("mnist model")
     app.run(host="0.0.0.0")
