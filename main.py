@@ -11,7 +11,8 @@ from PIL import Image
 app = Flask(__name__)
 cors = CORS(app)
 
-mnist_model = load_model('mnist_model.h5')
+# mnist_model = load_model('mnist_model.h5')
+mnist_model = load_model('VGG16_model.h5')
 
 
 @app.route("/")
