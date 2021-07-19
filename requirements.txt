@@ -8,6 +8,7 @@ click==8.0.1
 colorama==0.4.4
 Django==3.2.5
 Flask==2.0.1
+Flask-Cors==3.0.10
 flatbuffers==1.12
 gast==0.4.0
 google-auth==1.33.0
@@ -43,7 +44,7 @@ sqlparse==0.4.1
 tensorboard==2.5.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.0
-tensorflow==2.5.0
+tensorflow-cpu==2.5.0
 tensorflow-estimator==2.5.0
 termcolor==1.1.0
 typing-extensions==3.7.4.3
